@@ -3,267 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리더의 AI 곱셈법 제1호 | Strategic Insight for DSR</title>
+    <title>리더의 AI 곱셈법 제1호: 에이전틱 리더십</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; color: #0f172a; scroll-behavior: smooth; }
-        .hero-bg { background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%); }
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .hero-bg { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         
-        .mission-step { transition: all 0.3s ease; border-left: 4px solid transparent; }
-        .mission-step.active { border-left-color: #1e40af; background-color: #eff6ff; transform: translateX(8px); }
-        .tab-btn { transition: all 0.2s; border: 1px solid #e2e8f0; }
-        .tab-btn.active { background-color: #0f172a; color: white; border-color: #0f172a; box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.2); }
+        /* Smooth interactions */
+        .dept-btn { transition: all 0.2s ease-in-out; }
+        .dept-btn.active { background-color: #0ea5e9; color: white; border-color: #0ea5e9; box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3); }
+        .dept-btn:not(.active):hover { background-color: #f1f5f9; border-color: #cbd5e1; }
         
-        /* D|S|R Logo Style */
+        /* DSR Logo Style */
         .dsr-logo { font-family: 'Pretendard', sans-serif; font-weight: 900; letter-spacing: -0.05em; display: flex; align-items: center; }
-        .dsr-logo span { color: #1e40af; padding: 0 2px; }
+        .dsr-logo span { color: #0284c7; padding: 0 2px; }
         .dsr-logo .pipe { color: #cbd5e1; font-weight: 200; margin: 0 4px; }
-
-        @keyframes pulse-blue { 0% { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(30, 58, 138, 0); } 100% { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0); } }
-        .pulse-btn { animation: pulse-blue 2s infinite; }
     </style>
 </head>
 <body class="overflow-x-hidden selection:bg-blue-200 selection:text-blue-900">
 
-    <nav class="fixed top-0 w-full z-50 px-6 lg:px-10 py-4 flex justify-between items-center bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="flex items-center gap-6">
-            <div class="dsr-logo text-2xl">
-                <span>D</span><span class="pipe">|</span><span>S</span><span class="pipe">|</span><span>R</span>
-            </div>
-            <div class="hidden sm:block border-l border-slate-300 pl-6">
-                <span class="text-lg font-black tracking-tight text-slate-900 block leading-none uppercase">AI Multiplier</span>
-                <span class="text-[10px] text-blue-700 font-bold tracking-[0.2em] uppercase">Intelligence for Executive Leadership</span>
+    <nav class="fixed top-0 w-full z-50 px-6 lg:px-10 py-4 flex justify-between items-center bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+        <div class="flex items-center gap-4">
+            <img src="DSR_파란바_배경없음.png" alt="DSR Logo" class="h-8 object-contain" onerror="this.outerHTML='<div class=\'dsr-logo text-3xl\'><span>D</span><span class=\'pipe\'>|</span><span>S</span><span class=\'pipe\'>|</span><span>R</span></div>'">
+            <div class="border-l border-slate-300 pl-4">
+                <span class="text-xl font-black tracking-tight text-slate-900 block leading-none uppercase">AI Multiplier</span>
+                <span class="text-[10px] text-blue-600 font-bold tracking-[0.2em] uppercase">Intelligence for Leaders</span>
             </div>
         </div>
         <div class="hidden md:flex items-center gap-4">
-            <div class="text-[11px] font-bold text-slate-700 tracking-widest uppercase bg-slate-100 border border-slate-200 px-4 py-1.5 rounded-full">
-                Vol. 01 / Strategic Insight
+            <span class="text-xs font-semibold text-slate-500 tracking-wider">Premium Newsletter</span>
+            <div class="text-[11px] font-bold text-slate-700 tracking-widest uppercase bg-slate-100 border border-slate-200 px-4 py-1.5 rounded-full shadow-inner">
+                Phase 1 / Vol. 01
             </div>
         </div>
     </nav>
 
     <main class="pt-28 pb-24">
-        <section class="hero-bg py-24 px-6 mb-16 border-b border-blue-100 relative overflow-hidden">
+        <!-- Hero Section -->
+        <section class="hero-bg py-24 px-6 mb-20 border-b border-blue-100/50 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEw0IDRaIiBzdHJva2U9IiM5NGExYjIiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+')] opacity-50 pointer-events-none"></div>
             <div class="max-w-5xl mx-auto relative z-10 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-800 text-[11px] font-black uppercase tracking-widest mb-6 border border-blue-200">
-                    Executive Focus: Agentic Leadership
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/80 text-blue-800 text-[11px] font-black uppercase tracking-widest mb-8 border border-blue-200 shadow-sm backdrop-blur-sm">
+                    Executive Focus
                 </div>
-                <h1 class="text-4xl md:text-6xl font-black mb-8 leading-[1.2] tracking-tight text-slate-900">
+                <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[1.15] tracking-tight text-slate-900">
                     챗봇의 시대를 지나,<br>
-                    <span class="text-blue-700 italic">에이전트 지휘관</span>의 시대입니다.
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">AI 에이전트 지휘관</span>이 되십시오.
                 </h1>
                 <p class="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed font-medium mx-auto md:mx-0">
-                    IT 기술력이 아닌, 현장의 미세한 변수를 장악하는 리더의 **'도메인 지식'**이 AI를 가장 똑똑하게 부리는 유일한 권력이 됩니다. 6/11 워크샵을 앞두고, 에이전틱 시대의 새로운 리더십 로드맵을 확인하십시오.
+                    IT 툴 숙련도가 아닌, 현장의 미세한 제약 조건을 통제하는 리더의 전문성(Domain Knowledge)이 AI 시대를 주도하는 가장 강력한 전략 자산이 됩니다.
                 </p>
             </div>
         </section>
 
-        <section class="max-w-5xl mx-auto px-6 mb-24">
-            <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-slate-100">
-                <div class="mb-12 border-b border-slate-100 pb-8">
-                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight mb-4">Strategic Intelligence: 지능형 성장을 위한 3대 기둥</h2>
-                    <p class="text-slate-500 text-sm md:text-base leading-relaxed">본 리포트는 리더가 AI 트렌드를 선도하고, 실무진의 작업 원리를 간파하여 부서 전체의 생산성을 전략적으로 제어하는 법을 제시합니다.</p>
-                </div>
+        <!-- Newsletter Master Roadmap -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden">
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-50 rounded-full blur-3xl z-0"></div>
                 
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <div class="space-y-8">
-                        <div class="flex gap-4 items-start">
-                            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black shrink-0 shadow-lg">01</div>
-                            <div>
-                                <strong class="text-slate-900 block text-lg mb-1">Strategic Radar</strong>
-                                <p class="text-sm text-slate-500 leading-relaxed">리더가 반드시 알아야 할 거시적 AI 비즈니스 통찰력과 영상 큐레이션을 제공합니다.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4 items-start">
-                            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black shrink-0 shadow-lg">02</div>
-                            <div>
-                                <strong class="text-slate-900 block text-lg mb-1">Team Workflow 해독기</strong>
-                                <p class="text-sm text-slate-500 leading-relaxed">실무진의 AI 활용 원리를 해설하여 결과물의 신뢰도를 검증하고 소통 격차를 해소합니다.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4 items-start">
-                            <div class="w-10 h-10 rounded-xl bg-blue-700 text-white flex items-center justify-center font-black shrink-0 shadow-lg">03</div>
-                            <div>
-                                <strong class="text-blue-800 block text-lg mb-1">Action Lab (실무 미션)</strong>
-                                <p class="text-sm text-slate-600 leading-relaxed font-semibold">리더 본인의 내공을 직접 주입하여 즉각적인 결과물을 도출하는 참여형 워크샵입니다.</p>
-                            </div>
-                        </div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-1 h-8 bg-blue-600 rounded-full"></div>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">앞으로의 여정: 리더의 AI 전략 로드맵</h2>
                     </div>
-
-                    <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200">
-                        <h3 class="text-xs font-black text-slate-500 uppercase tracking-widest mb-8">Executive Master Roadmap</h3>
-                        <div class="space-y-6">
-                            <div class="pl-4 border-l-2 border-blue-700 relative">
-                                <span class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-blue-700"></span>
-                                <span class="text-[10px] font-bold text-blue-700 mb-1 block uppercase">Phase 1: 현재 진행 중</span>
-                                <strong class="text-sm text-slate-900 block mb-1 underline decoration-blue-200 underline-offset-4">AI 지휘권 확보 및 워크샵 프리뷰</strong>
-                                <p class="text-xs text-slate-500 leading-relaxed">지휘권 확보에 이어, <span class="font-bold text-blue-700">6/11 워크샵 대비 '바이브 코딩 프리뷰'</span>가 다음 호에서 집중 발행됩니다.</p>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-300 relative opacity-60">
-                                <span class="text-[10px] font-bold text-slate-400 mb-1 block uppercase">Phase 2: 6월 중순 ~ 7월</span>
-                                <strong class="text-sm text-slate-700 block mb-1">현장 데이터 시각화 및 부서용 비서 구축</strong>
-                                <p class="text-xs text-slate-500">클로드 아티팩트와 제미나이 젬스(Gems)를 활용한 부서 맞춤형 도구를 완성합니다.</p>
-                            </div>
-                            <div class="pl-4 border-l-2 border-slate-300 relative opacity-60">
-                                <span class="text-[10px] font-bold text-slate-400 mb-1 block uppercase">Phase 3: 8월 ~ 9월</span>
-                                <strong class="text-sm text-slate-700 block mb-1">다단계 자동화 및 전략 시나리오 플래닝</strong>
-                                <p class="text-xs text-slate-500">구글 오팔(Opal) 및 슈퍼 젬스를 활용해 리더의 판단력을 자동화 프로세스에 이식합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="max-w-5xl mx-auto px-6 mb-24 py-16 border-y border-slate-100">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="order-2 lg:order-1">
-                    <div class="video-wrapper">
-                        <iframe 
-                            src="https://www.youtube.com/embed/8VrtOkl1ztM?si=5o1W9g3N0M01R-tP&rel=0&modestbranding=1" 
-                            title="YouTube video player" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="mt-4 flex items-center justify-between px-2 text-[10px] text-slate-400 font-bold uppercase tracking-widest">
-                        <span>Video Source: 교양이를 부탁해</span>
-                        <span>Analyst: KAIST 김대식 교수</span>
-                    </div>
-                </div>
-                <div class="space-y-6 order-1 lg:order-2">
-                    <div class="inline-block px-3 py-1 bg-slate-900 text-white text-[10px] font-black rounded uppercase tracking-widest">
-                        Strategic Radar
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight tracking-tight">"왜 리더의 내공이<br>가장 강력한 권력인가?"</h2>
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        카이스트 김대식 교수는 AI 시대의 성패는 실행의 <strong>'제약 조건(Constraints)'</strong>을 얼마나 정교하게 주입하느냐에 달렸다고 단언합니다. <br><br>과거의 AI가 단순 정보를 주는 챗봇이었다면, 현재는 목표를 주면 스스로 계획을 세워 실행하는 **에이전트**입니다. 이때 데이터가 포착하지 못하는 공정의 미세한 변화, 부서 간 역학 관계 등 **현장의 맥락을 꿰뚫고 있는 리더의 통찰력**만이 에이전트를 가동하는 유일한 지휘봉이 됩니다.
+                    <p class="text-slate-600 mb-12 leading-relaxed max-w-4xl text-lg">
+                        본 리포트는 실무진의 AI 활용 방식을 이해하고, 리더 본인의 전문성을 통해 시스템을 지휘하는 3단계 마스터 로드맵을 제공합니다. 매 호마다 영상 통찰력(Radar), 실무 검증법(해독기), 실전 지휘 미션(Action Lab)이 고정 제공됩니다.
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="max-w-5xl mx-auto px-6 mb-24">
-            <div class="flex items-center gap-3 mb-10">
-                <div class="w-1.5 h-8 bg-blue-700 rounded-full"></div>
-                <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Team Workflow 해독기: 실무진은 어떻게 일하는가?</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm relative overflow-hidden">
-                    <h3 class="text-xs font-black text-blue-700 uppercase tracking-widest mb-6">Mechanism: 바이브 코딩(Vibe Coding)</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-8">
-                        요즘 실무진은 코드를 한 줄씩 치지 않습니다. AI에게 **'이런 느낌(Vibe)으로 보고서 초안을 잡아줘'** 혹은 **'이 엑셀 파일을 읽고 시각화해줘'**라고 지시합니다. 이것이 바로 **바이브 코딩**입니다. 리더는 결과물이 아닌, 실무진이 입력한 '의도(Vibe)'를 관리해야 합니다.
-                    </p>
-                    <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                        <strong class="text-xs text-slate-400 block mb-3 uppercase tracking-tighter">리더십의 소통 방식 변화</strong>
-                        <ul class="space-y-3">
-                            <li class="flex items-center gap-2 text-sm text-slate-700 font-semibold">
-                                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-                                <span>작업 시간 단축 ➔ 빠른 결과물(Draft) 검증 중심</span>
-                            </li>
-                            <li class="flex items-center gap-2 text-sm text-slate-700 font-semibold">
-                                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-                                <span>방대한 데이터의 실시간 시각화 보고 장악</span>
-                            </li>
-                        </ul>
+                    
+                    <div class="grid lg:grid-cols-3 gap-6">
+                        <!-- Phase 1 -->
+                        <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 relative shadow-sm">
+                            <div class="absolute top-0 right-0 p-4">
+                                <span class="animate-pulse w-3 h-3 block bg-blue-500 rounded-full"></span>
+                            </div>
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-600 mb-2 block">Phase 1. 지휘권 확보</span>
+                            <h4 class="text-base font-bold text-slate-900 mb-4 pb-3 border-b border-blue-200">소통의 해상도 높이기</h4>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start gap-2"><strong class="text-blue-700">Vol.01</strong> <span>에이전트를 지휘하는 리더의 내공</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.02</strong> <span>'바이브 코딩'의 원리와 실체 (6/11 워크숍 대비)</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.03</strong> <span>검색의 종말, '딥 리서치' 활용법</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.04</strong> <span>우리 팀의 무기 고르기 (AI 3대장)</span></li>
+                            </ul>
+                        </div>
+                        <!-- Phase 2 -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 opacity-80">
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2 block">Phase 2. 자산화</span>
+                            <h4 class="text-base font-bold text-slate-700 mb-4 pb-3 border-b border-slate-200">데이터 시각화와 맞춤 비서</h4>
+                            <ul class="space-y-3 text-sm text-slate-500">
+                                <li class="flex items-start gap-2"><strong>Vol.05</strong> <span>아티팩트로 그리는 직관적 대시보드</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.06</strong> <span>지식을 복제하는 '프로젝트' 설정</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.07</strong> <span>우리 팀만의 전문가, 'Gems' 운영</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.08</strong> <span>흩어진 사내 데이터 통합 (커넥터)</span></li>
+                            </ul>
+                        </div>
+                        <!-- Phase 3 -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 opacity-80">
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2 block">Phase 3. 시스템화</span>
+                            <h4 class="text-base font-bold text-slate-700 mb-4 pb-3 border-b border-slate-200">자동화와 전략적 의사결정</h4>
+                            <ul class="space-y-3 text-sm text-slate-500">
+                                <li class="flex items-start gap-2"><strong>Vol.09</strong> <span>스스로 보고하는 '슈퍼 젬스' 파이프라인</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.10</strong> <span>노코드 시스템 엔지니어링 (Opal)</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.11</strong> <span>최종 결정의 방어벽, 'AI 레드팀'</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.12</strong> <span>대체 불가능한 리더의 본질</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="bg-[#0f172a] p-8 rounded-[2rem] text-white shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-2xl rounded-full"></div>
-                    <h3 class="text-xs font-black text-emerald-400 uppercase tracking-widest mb-6 flex items-center gap-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                        Strategic Filter: 리더의 보고서 검증법
-                    </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">AI 기반 결과물에는 오직 리더만이 포착할 수 있는 **'비즈니스 맥락의 환각'**이 존재합니다. 아래 3가지를 통해 신뢰도를 검증하십시오.</p>
-                    <ul class="space-y-4">
-                        <li class="p-4 bg-white/5 rounded-xl border border-white/10">
-                            <strong class="text-emerald-400 text-xs block mb-1">01. Source Verification (데이터 출처)</strong>
-                            <p class="text-xs text-slate-300">AI가 지어낸 일반론적 통계인지, 당사 ERP 및 현장 센서 기반의 팩트인지 확인하십시오.</p>
-                        </li>
-                        <li class="p-4 bg-white/5 rounded-xl border border-white/10">
-                            <strong class="text-emerald-400 text-xs block mb-1">02. Specific Constraints (제약 조건의 유무)</strong>
-                            <p class="text-xs text-slate-300">"와이어로프의 계절적 수축 편차"나 "당사만의 특수 배합비"가 반영되었는지 묻고 보완을 지시하세요.</p>
-                        </li>
-                        <li class="p-4 bg-white/5 rounded-xl border border-white/10">
-                            <strong class="text-emerald-400 text-xs block mb-1">03. Manager's Intuition (리더의 판단 주입)</strong>
-                            <p class="text-xs text-slate-300">AI의 요약이 아닌, 담당자가 현장에서 느낀 '온도차'를 덧붙이게 하여 보고서의 최종 퀄리티를 결정하십시오.</p>
-                        </li>
-                    </ul>
+        <!-- Strategic Radar (Video Section) -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-2 md:p-3 rounded-[2rem] shadow-2xl border border-slate-100">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/8VrtOkl1ztM?si=5o1W9g3N0M01R-tP&rel=0&modestbranding=1" 
+                                title="YouTube video player" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center px-2">
+                        <span class="text-[11px] font-bold text-slate-400 tracking-widest uppercase">Video Insight Source</span>
+                        <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">교양이를 부탁해 (카이스트 김대식 교수)</span>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-8 mt-8 lg:mt-0">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-black mb-4 rounded-md uppercase tracking-wider border border-blue-100">Strategic Radar</div>
+                        <h3 class="text-3xl font-black mb-6 text-slate-900 leading-tight">에이전틱 AI 시대,<br>버려야 할 착각들</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-6">
+                            과거의 AI가 지식을 주는 '챗봇'이었다면, 현재의 AI는 비행기 표를 예매하고 보고서를 스스로 완성하는 <strong>'에이전트(Agent)'</strong>로 진화했습니다.
+                        </p>
+                        <p class="text-slate-600 text-base leading-relaxed mb-8">
+                            에이전트는 훌륭한 실행자이지만, 목표와 제약 조건을 주지 않으면 엉뚱한 방향으로 폭주(예: 스팸 메일만 삭제하라고 했더니 전체 이메일을 삭제하는 환각 현상)할 수 있습니다. 
+                        </p>
+                    </div>
+                    
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <h4 class="text-sm font-bold text-slate-800 uppercase tracking-widest mb-4 border-b border-slate-200 pb-2">The Leader's Asset</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            김대식 교수는 "현장 업무에 AI를 가장 강력하게 적용하는 세대는 젊은 층이 아니라 4050 이상의 숙련가들"이라고 분석합니다. 데이터에 없는 공정의 미세한 변화, 협력사와의 관계 등 <strong>'현장의 제약 조건(Constraints)'</strong>을 정확히 쥐고 있는 리더만이 에이전트에게 완벽한 지휘를 내릴 수 있기 때문입니다.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="max-w-5xl mx-auto px-6 mb-24" id="action-lab">
-            <div class="mb-12 text-center md:text-left flex items-center justify-between">
+        <!-- Team Workflow 해독기 -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-slate-900 rounded-[3rem] p-10 md:p-16 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
+                
+                <div class="relative z-10 text-white">
+                    <div class="max-w-3xl mb-12">
+                        <div class="inline-block px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-blue-300 text-xs font-black mb-6 border border-white/10 uppercase tracking-widest">Team Workflow 해독기</div>
+                        <h2 class="text-3xl md:text-4xl font-black leading-tight tracking-tight mb-4">실무진의 보고서를 검증하는 '3대 필터'</h2>
+                        <p class="text-slate-400 text-base leading-relaxed font-light">
+                            실무진은 더 이상 백지에서 문서를 쓰지 않고 AI 에이전트에게 지시를 내립니다. 리더는 결과물의 문장력이 아니라, 에이전트가 작동한 <strong>'논리와 제약조건'</strong>을 검증해야 합니다.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Filter 1 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-3xl transition-transform hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4">01</div>
+                            <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Constraint (제약조건)</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                "우리 공장만의 특수한 설비 연식이나 계절적 온도 편차가 반영되었는가?"<br><br>일반론적인 답변을 거르고 현장의 특수성이 입력되었는지 확인하십시오.
+                            </p>
+                        </div>
+                        <!-- Filter 2 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-3xl transition-transform hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4">02</div>
+                            <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Hallucination (환각)</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                "데이터의 출처가 정확하며, AI가 임의로 생성한 통계는 없는가?"<br><br>에이전트는 목표를 달성하기 위해 정보를 지어낼 수 있습니다. 핵심 데이터의 출처 확인을 요구하십시오.
+                            </p>
+                        </div>
+                        <!-- Filter 3 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-3xl transition-transform hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4">03</div>
+                            <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Context (비즈니스 맥락)</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                "부서 간 역학 관계나 고객사의 최근 동향이 고려되었는가?"<br><br>AI가 파악하지 못하는 정성적인 관계망을 리더의 시각으로 보완 지시하십시오.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Lab -->
+        <section class="max-w-6xl mx-auto px-6">
+            <div class="mb-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-900 rounded-lg text-white text-[11px] font-black mb-4 uppercase tracking-widest shadow-md">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-600 rounded-lg text-white text-[11px] font-black mb-4 uppercase tracking-widest shadow-md">
                         <span class="relative flex h-2 w-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-200 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                         </span>
                         Action Lab: 오늘의 지휘 미션
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 mb-4">AI를 '전략적 대리인'으로 고용하기</h2>
-                    <p class="text-slate-500 text-base">리더의 내공을 주입하여 AI가 결론 대신 '질문'하게 만드세요. 단계별 미션을 직접 수행해 보십시오.</p>
+                    <h2 class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 mb-2">AI 에이전트를 '나의 대리인'으로 가동하기</h2>
+                    <p class="text-slate-600 text-lg">결론을 내지 말고 **나에게 먼저 역질문**하도록 설계된 최고 수준의 전략 프롬프트를 체험하십시오.</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 overflow-hidden flex flex-col lg:flex-row">
-                <!-- Left: Mission Checklist -->
-                <div class="w-full lg:w-2/5 bg-slate-50 p-8 border-b lg:border-b-0 lg:border-r border-slate-200">
-                    <h3 class="text-xs font-black text-slate-500 uppercase tracking-widest mb-10">Mission Workflow</h3>
+            <div class="bg-white rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-200 overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Left: Inputs -->
+                <div class="w-full lg:w-5/12 bg-slate-50 p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col">
                     
-                    <div class="space-y-6 relative before:absolute before:inset-0 before:ml-[15px] before:-translate-x-px before:h-full before:w-0.5 before:bg-slate-200">
-                        <div class="mission-step active relative flex items-start gap-4 p-4 rounded-2xl z-10" id="step1-box">
-                            <div class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold text-sm shrink-0 border-4 border-slate-50">1</div>
-                            <div>
-                                <strong class="block text-sm text-slate-900 mb-1">담당 부서 선택</strong>
-                                <p class="text-[11px] text-slate-500">리더님의 부서 탭을 클릭하여 시나리오를 로드하세요.</p>
-                            </div>
+                    <div class="mb-8">
+                        <label class="text-xs font-black text-slate-500 uppercase tracking-widest mb-3 block">1. 담당 부서 선택</label>
+                        <div class="flex overflow-x-auto pb-2 scrollbar-hide gap-2 mask-linear-fade">
+                            <button onclick="changeDept('제조', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200 active">🏭 제조/생산</button>
+                            <button onclick="changeDept('품질', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">🔎 품질관리</button>
+                            <button onclick="changeDept('기술', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">💡 기술/R&D</button>
+                            <button onclick="changeDept('판매', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">🤝 판매/영업</button>
+                            <button onclick="changeDept('설비', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">⚙️ 설비/보전</button>
+                            <button onclick="changeDept('회계', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">📊 회계/재무</button>
+                            <button onclick="changeDept('총무', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">👥 총무/인사</button>
                         </div>
-                        <div class="mission-step relative flex items-start gap-4 p-4 rounded-2xl z-10" id="step2-box">
-                            <div class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-bold text-sm shrink-0 border-4 border-slate-50 transition-all" id="step2-num">2</div>
-                            <div>
-                                <strong class="block text-sm text-slate-900 mb-1">현장 지식 복사 & 실행</strong>
-                                <p class="text-[11px] text-slate-500">생성된 전략 명령어를 복사하여 제미나이를 실행합니다.</p>
-                            </div>
+                    </div>
+
+                    <div class="space-y-6 flex-grow">
+                        <div>
+                            <label class="text-xs font-black text-slate-500 uppercase tracking-widest mb-2 block flex items-center justify-between">
+                                <span>2. Context (전략적 목표)</span>
+                                <span id="deptTitleBadge" class="bg-slate-200 text-slate-600 text-[10px] px-2 py-0.5 rounded">생산 효율 및 에너지 혁신</span>
+                            </label>
+                            <textarea id="missionContext" rows="4" class="w-full p-4 text-sm text-slate-700 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none shadow-sm"></textarea>
                         </div>
-                        <div class="mission-step relative flex items-start gap-4 p-4 rounded-2xl z-10" id="step3-box">
-                            <div class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-bold text-sm shrink-0 border-4 border-slate-50 transition-all" id="step3-num">3</div>
-                            <div>
-                                <strong class="block text-sm text-slate-900 mb-1">AI의 역질문에 답변</strong>
-                                <p class="text-[11px] font-bold text-blue-700 leading-relaxed">AI가 던지는 3가지 질문에 현장 지식을 짧게 답하세요.</p>
-                            </div>
+
+                        <div>
+                            <label class="text-xs font-black text-blue-600 uppercase tracking-widest mb-2 block">
+                                3. Secret Variable (리더의 현장 변수 주입)
+                            </label>
+                            <p class="text-[11px] text-slate-500 mb-2 leading-tight">데이터에 없는 직관이나 제약조건을 입력하십시오. (입력 시 우측 코드에 즉시 반영됩니다)</p>
+                            <textarea id="missionVariable" rows="3" class="w-full p-4 text-sm text-slate-900 bg-blue-50/50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none placeholder-slate-400 shadow-sm transition-all"></textarea>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Interactive Area -->
-                <div class="w-full lg:w-3/5 p-8 bg-white flex flex-col">
-                    <div class="flex gap-2 mb-8 overflow-x-auto pb-4 scrollbar-hide">
-                        <button onclick="setMission('제조')" class="tab-btn active px-4 py-2 rounded-xl text-[11px] font-bold text-slate-600 whitespace-nowrap shrink-0">🏭 제조/생산</button>
-                        <button onclick="setMission('품질')" class="tab-btn px-4 py-2 rounded-xl text-[11px] font-bold text-slate-600 whitespace-nowrap shrink-0">🔎 품질관리</button>
-                        <button onclick="setMission('기술')" class="tab-btn px-4 py-2 rounded-xl text-[11px] font-bold text-slate-600 whitespace-nowrap shrink-0">💡 기술/R&D</button>
-                        <button onclick="setMission('판매')" class="tab-btn px-4 py-2 rounded-xl text-[11px] font-bold text-slate-600 whitespace-nowrap shrink-0">🤝 판매/영업</button>
-                        <button onclick="setMission('총무')" class="tab-btn px-4 py-2 rounded-xl text-[11px] font-bold text-slate-600 whitespace-nowrap shrink-0">👥 총무/인사</button>
-                        <button onclick="setMission('회계')" class="tab-btn px-4 py-2 rounded-xl text-[11px] font-bold text-slate-600 whitespace-nowrap shrink-0">📊 회계/재무</button>
-                        <button onclick="setMission('설비')" class="tab-btn px-4 py-2 rounded-xl text-[11px] font-bold text-slate-600 whitespace-nowrap shrink-0">⚙️ 설비/보전</button>
+                <!-- Right: Output Prompt (Terminal Style) -->
+                <div class="w-full lg:w-7/12 bg-[#0f172a] p-6 md:p-10 flex flex-col relative">
+                    <div class="flex items-center justify-between mb-6">
+                        <label class="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            Generated Agent Command
+                        </label>
+                        <span class="text-[10px] text-blue-400 bg-blue-400/10 border border-blue-400/20 px-2 py-0.5 rounded font-mono">Level 5 Prompt</span>
                     </div>
-
-                    <div class="flex-grow bg-[#0f172a] rounded-[2rem] p-8 relative group border border-slate-800 shadow-2xl">
-                        <div class="absolute top-6 right-6 text-[9px] font-mono text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded border border-emerald-400/20 uppercase">Strategy Agent Command</div>
-                        <pre id="promptDisplay" class="text-[13px] text-slate-300 font-mono whitespace-pre-wrap leading-relaxed h-64 lg:h-72 overflow-y-auto scrollbar-hide selection:bg-blue-600 selection:text-white pt-4"></pre>
+                    
+                    <div class="flex-grow relative">
+                        <pre id="finalPromptText" class="text-[13px] text-slate-300 font-mono whitespace-pre-wrap leading-relaxed overflow-y-auto scrollbar-hide h-64 lg:h-[400px] w-full focus:outline-none selection:bg-blue-500/30 selection:text-white pb-10"></pre>
+                        <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none"></div>
                     </div>
-
-                    <div class="mt-8">
-                        <button onclick="copyAndAdvance()" id="copyBtn" class="w-full py-4 bg-blue-700 hover:bg-blue-800 text-white text-sm font-bold rounded-2xl transition-all shadow-xl shadow-blue-100 flex items-center justify-center gap-2 pulse-btn">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
-                            미션 명령어 복사 후 구글 제미나이 실행
+                    
+                    <div class="mt-6 pt-6 border-t border-slate-800 flex justify-end shrink-0">
+                        <button onclick="copyActionPrompt()" id="actionCopyBtn" class="w-full md:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                            <span>명령어 복사 후 제미나이 실행하기</span>
                         </button>
                     </div>
                 </div>
@@ -271,131 +280,180 @@
         </section>
     </main>
 
-    <footer class="py-16 px-6 bg-slate-900 text-white border-t border-slate-800">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="text-center md:text-left">
-                <div class="dsr-logo text-2xl mb-4">
-                    <span class="text-white">D</span><span class="pipe">|</span><span class="text-white">S</span><span class="pipe">|</span><span class="text-white">R</span>
+    <footer class="py-12 px-8 bg-slate-900 text-white border-t border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="bg-white px-3 py-1.5 rounded-md mb-4 inline-block">
+                    <img src="DSR_파란바_배경없음.png" alt="DSR Logo" class="h-6 object-contain" onerror="this.outerHTML='<span class=\'text-blue-600 font-black\'>D|S|R</span>'">
                 </div>
-                <p class="text-xs text-slate-400 max-w-sm leading-relaxed mx-auto md:mx-0 font-medium">
-                    본 리포트는 DSR 및 DSR제강 리더의 전략적 성장을 위해 발행됩니다. 리더의 내공은 AI 시대에 소멸되는 것이 아니라, 더 정교한 지휘봉을 잡게 되는 핵심 자본입니다.
+                <p class="text-sm text-slate-400 max-w-md text-center md:text-left leading-relaxed">
+                    본 리포트는 DSR 리더의 전략적 성장을 위해 발행됩니다. 리더의 전문성은 AI 시대에 소멸되는 것이 아니라, 더 정교한 지휘봉을 잡게 되는 핵심 자산입니다.
                 </p>
             </div>
-            <div class="text-[10px] text-slate-500 tracking-[0.2em] font-semibold uppercase text-center md:text-right leading-loose">
+            <div class="text-[11px] text-slate-500 tracking-widest font-semibold text-center md:text-right uppercase leading-loose">
                 Copyright © 2026 DSR Corp. & DSR Wire Corp.<br>All Rights Reserved.
             </div>
         </div>
     </footer>
 
     <script>
-        const missionData = {
-            '제조': `[System Persona: Senior Production Strategist for Wire Rope]
-상황: DSR제강의 핵심 공정인 '특수 와이어로프' 연선(Stranding) 라인에 최신 스마트 설비를 도입하여, 생산 효율 및 에너지 관리를 동시에 혁신하려 합니다.
-
-지시: 
-1. 4M 프레임워크를 기반으로 생산 효율 극대화 및 공정 고도화를 위한 마스터플랜의 초안을 세워라.
-2. 단, 즉시 결론을 내리지 마라.
-3. 데이터가 포착하지 못하는 현장의 미세한 변수(베테랑 작업자의 노하우, 신규 설비 도입 시 기존 물류 동선과의 마찰 등)를 파악하기 위해, 리더인 나에게 필요한 예리한 질문 3가지를 먼저 던져라.`,
-            
-            '품질': `[System Persona: QA Master for High-Performance Fiber Ropes]
-상황: DSR(주)의 '슈퍼로프' 내구성 기준을 상향하여, 글로벌 선도 조선소에 납품하기 위한 '초격차 프리미엄 품질 인증' 체계를 선제적으로 구축하려 합니다.
-
-지시:
-1. 선도적인 품질 보증 체계 구축을 위한 단계별 로드맵 구조를 잡아라.
-2. 단, 즉시 결론을 내리지 마라.
-3. 화학 원료의 미세 배합 특성이나 극한 환경에서의 현장 테스트 조건 등 시스템에 기록되지 않은 현장 변수를 파악하기 위해 나에게 질문 3가지를 먼저 던져라.`,
-            
-            '기술': `[System Persona: CTO for Mooring Systems]
-상황: 차세대 부유식 해상 풍력 시장 선점을 위해, 중량은 줄이고 인장 강도는 높인 '초고강도 계류용(Mooring) 로프' 신제품 개발 프로젝트를 지휘하고 있습니다.
-
-지시:
-1. TRIZ 기법을 활용해 강도 강화와 중량 감소를 동시에 달성할 혁신적 구조 아이디어 초안을 제안하라.
-2. 단, 즉시 결론을 내리지 마라.
-3. 양산 적용 시의 원가 타당성이나 공정 내 실제 구현 가능성 등 현장 도입 리스크 파악을 위해 나에게 질문 3가지를 먼저 던져라.`,
-            
-            '판매': `[System Persona: Global B2B Sales Executive]
-상황: 글로벌 인프라 프로젝트 수주를 위해, DSR 제품이 가져다줄 총소유비용(TCO) 절감 효과를 어필하며 장기 전략적 파트너십을 제안하려 합니다.
-
-지시:
-1. 단순 제품 판매를 넘어, 고객사의 유지보수 주기 최적화 및 내구 수명 연장을 포함한 '가치 기반(Value-based) 제안' 논리를 구조화해라.
-2. 단, 즉시 결론을 내리지 마라.
-3. 해당 바이어의 숨은 비즈니스 목표나 당사와의 장기 시너지 포인트 파악을 위해 예리한 질문 3가지를 먼저 던져라.`,
-
-            '총무': `[System Persona: Executive HRBP for Manufacturing Culture]
-상황: DSR 현장 명장들의 암묵지(Tacit Knowledge)를 차세대 엔지니어들에게 전수하고 디지털 자산화하는 '성장 멘토링 프로젝트'를 추진 중입니다.
-
-지시:
-1. 세대 간 지식 교류와 상호 존중을 이끌어낼 사내 워크샵 아젠다 및 지식 자산화 프로세스 초안을 잡아라.
-2. 단, 즉시 결론을 내리지 마라.
-3. 각 공장의 고유한 현장 문화나 명장들의 성향 파악을 위해 나에게 질문 3가지를 먼저 던져라.`,
-
-            '회계': `[System Persona: Strategic CFO for Manufacturing]
-상황: 최근 제조 간접비가 증가함에 따라, 수익성 방어를 위한 비용 효율화 진단과 관리 회계 기반의 의사결정이 필요합니다.
-
-지시:
-1. 간접비 증가 원인을 역추적할 수 있는 재무 데이터 체크리스트와 경영진 보고용 내러티브 초안을 작성하라.
-2. 단, 즉시 결론을 내리지 마라.
-3. 숨겨진 전기료 인상 요인이나 신규 라인 테스트 비용 등 현장 예산 집행의 특이점 파악을 위해 질문 3가지를 던져라.`,
-
-            '설비': `[System Persona: PdM Reliability Strategist]
-상황: 핵심 CNC 및 연선 설비의 예지 보전(PdM)을 위해 데이터 기반의 최적 오버홀(Overhaul) 주기를 재설정하여 가동률을 극대화하려 합니다.
-
-지시:
-1. 즉각적인 가동 중단과 런 투 페일러(Run-to-Failure) 사이의 ROI 기반 시나리오를 설계하라.
-2. 단, 즉시 결론을 내리지 마라.
-3. 예산 상황이나 비정품 소모품 사용 이력 등 시스템에 남지 않은 설비 관리 변수 파악을 위해 질문 3가지를 던져라.`
+        const deptData = {
+            '제조': {
+                title: '생산 수율 및 에너지 효율 극대화',
+                context: 'DSR제강의 핵심 공정인 와이어로프 연선(Stranding) 라인에 스마트 설비를 도입하여, 생산 속도와 에너지 효율을 동시에 15% 이상 끌어올리는 혁신 프로젝트를 기획 중입니다.',
+                varPlaceholder: '예: 최근 야간 조에 신규 인력이 다수 투입되어 기존 물류 동선과의 마찰이 우려됨.',
+                systemPersona: '[System Persona: Master Black Belt & Production Strategist]',
+                task: '4M(Man, Machine, Material, Method) 프레임워크를 기반으로 생산 효율 극대화 마스터플랜의 뼈대를 세워라.'
+            },
+            '품질': {
+                title: '초격차 프리미엄 인증 체계 구축',
+                context: 'DSR(주)가 글로벌 조선/해양사에 납품하는 합성섬유 슈퍼로프의 내구성 기준을 선제적으로 상향하여, 경쟁사가 범접할 수 없는 최고 수준의 프리미엄 품질 보증 체계를 구축하려 합니다.',
+                varPlaceholder: '예: 심해 극한 환경 테스트 시 온도 변화에 따른 화학 원료의 미세 배합 편차가 존재함.',
+                systemPersona: '[System Persona: QA Executive & ISO Certification Master]',
+                task: '선도적인 품질 보증 체계 구축을 위한 단계별 로드맵 구조를 제안하라.'
+            },
+            '기술': {
+                title: '해상풍력용 신제품 R&D 기획',
+                context: '차세대 부유식 해상 풍력 시장 선점을 위해, 기존 제품 대비 중량은 대폭 줄이면서도 극한의 파도 하중을 견디는 초고강도 계류용(Mooring) 특수 로프 신제품을 개발하고자 합니다.',
+                varPlaceholder: '예: 강도를 높이기 위해 재질을 변경하면 기존 연선 설비의 개조 비용이 과다하게 발생할 우려가 있음.',
+                systemPersona: '[System Persona: CTO & TRIZ Problem Solver]',
+                task: '강도 향상과 중량/원가 감소라는 모순을 해결할 혁신적 R&D 접근 방향 3가지를 기획하라.'
+            },
+            '판매': {
+                title: '글로벌 수주 및 가치 기반 제안',
+                context: '북미 지역 초대형 인프라 프로젝트 수주를 위해, 글로벌 바이어에게 DSR 제품 도입 시 예상되는 총소유비용(TCO) 절감 효과를 어필하며 장기 전략적 파트너십을 제안하려 합니다.',
+                varPlaceholder: '예: 해당 바이어는 최근 ESG 규제 대응을 최우선 경영 목표로 삼고 있음.',
+                systemPersona: '[System Persona: Global B2B Sales Director & Negotiation Expert]',
+                task: '단순 제품 납품을 넘어, 고객사의 내구 수명 연장 및 유지보수 최적화를 포함한 가치 기반(Value-based) 협상 시나리오를 설계하라.'
+            },
+            '설비': {
+                title: '데이터 기반 예지 보전(PdM)',
+                context: '핵심 CNC 및 연선 설비의 가동률 극대화를 위해, 고장 후 수리 방식에서 벗어나 데이터 기반의 최적 오버홀(Overhaul) 주기를 재설정하는 예지 보전 시스템을 도입하려 합니다.',
+                varPlaceholder: '예: 작년 3분기 예산 절감을 이유로 특정 핵심 부품의 정품 교환 주기를 6개월 연장한 상태임.',
+                systemPersona: '[System Persona: Reliability Engineering Director]',
+                task: '가동 중단(Overhaul)으로 인한 손실과 사전 유지보수로 인한 이익의 ROI 기반 시나리오를 설계하라.'
+            },
+            '회계': {
+                title: '수익성 방어 및 비용 효율화',
+                context: '최근 원자재 가격 변동과 공통 제조 간접비 증가 추세에 대응하여, 수익성을 방어하기 위한 부서별 비용 효율화 진단과 관리 회계 기반의 전략적 의사결정 모델이 필요합니다.',
+                varPlaceholder: '예: 신규 라인 테스트 시 발생한 자재 낭비가 모두 공통 간접비로 회계 처리되어 원인 추적이 어려움.',
+                systemPersona: '[System Persona: Strategic CFO & Management Accountant]',
+                task: '간접비 증가의 숨은 동인(Cost Driver)을 찾아낼 수 있는 재무 점검 체크리스트를 제안하라.'
+            },
+            '총무': {
+                title: '명장 암묵지 자산화 및 멘토링',
+                context: '현장에서 오랜 기술력을 쌓아온 명장들의 암묵지(Tacit Knowledge)를 차세대 엔지니어에게 전수하고, 이를 회사의 지속 가능한 디지털 자산으로 시스템화하는 조직 문화 혁신을 추진합니다.',
+                varPlaceholder: '예: 부산/순천 공장의 고유한 수직적 현장 문화로 인해 주니어 직원들의 자발적인 소통 참여가 저조함.',
+                systemPersona: '[System Persona: Executive HRBP & Organizational Psychologist]',
+                task: '세대 간 자연스러운 지식 교류를 이끌어낼 수 있는 사내 워크숍 아젠다와 지식 자산화 프로세스 초안을 기획하라.'
+            }
         };
 
-        function setMission(dept) {
-            document.getElementById('promptDisplay').innerText = missionData[dept];
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.innerText.includes(dept)) btn.classList.add('active');
+        let currentDept = '제조';
+
+        function changeDept(deptName, event) {
+            currentDept = deptName;
+            const data = deptData[deptName];
+
+            // Tab Styling Updates
+            document.querySelectorAll('.dept-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
             });
-            resetSteps();
+
+            if (event && event.target) {
+                event.target.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                event.target.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+                const firstBtn = document.querySelector('.dept-btn');
+                if(firstBtn) {
+                    firstBtn.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                    firstBtn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                }
+            }
+
+            // Update UI Fields
+            document.getElementById('deptTitleBadge').innerText = data.title;
+            document.getElementById('missionContext').value = data.context;
+            document.getElementById('missionVariable').placeholder = data.varPlaceholder;
+            document.getElementById('missionVariable').value = ''; 
+
+            generatePrompt();
         }
 
-        function resetSteps() {
-            document.getElementById('step1-box').classList.add('active');
-            document.getElementById('step2-box').classList.remove('active');
-            document.getElementById('step3-box').classList.remove('active');
-            document.getElementById('step2-num').classList.replace('bg-blue-700', 'bg-slate-200');
-            document.getElementById('step2-num').classList.remove('text-white');
-            document.getElementById('step3-num').classList.replace('bg-blue-700', 'bg-slate-200');
-            document.getElementById('step3-num').classList.remove('text-white');
+        function generatePrompt() {
+            const data = deptData[currentDept];
+            const contextInput = document.getElementById('missionContext').value;
+            const variableInput = document.getElementById('missionVariable').value || "[리더의 현장 변수 입력 대기 중. (입력 시 이 영역에 즉시 반영됩니다)]";
             
-            const btn = document.getElementById('copyBtn');
-            btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg> 미션 명령어 복사 후 구글 제미나이 실행`;
-            btn.classList.replace('bg-emerald-700', 'bg-blue-700');
+            const finalPrompt = `${data.systemPersona}
+
+[Background]
+나는 제조업 현장에서 풍부한 경험을 쌓고 의사결정을 책임지는 리더이다. AI인 너는 단순한 정보 제공자가 아닌 나의 '전략적 대리인(Agent)'으로서 업무를 수행한다.
+
+[Strategic Context]
+${contextInput}
+
+[Leader's Constraint (현장 변수 주입)]
+${variableInput}
+
+[Agent Workflow Task]
+1. 분석(Analysis): 주어진 상황과 내가 입력한 현장 변수를 통합하여, ${data.task}
+2. 역질문(Inquiry): 분석의 정밀도를 극대화하기 위해, 현장 리더인 나만이 판단할 수 있는 숨겨진 비즈니스 제약조건 3가지를 나에게 비판적으로 역질문하라.
+3. 대기(Wait): 나의 추가 답변을 받기 전까지는 섣불리 최종 결론을 내리지 말고 대기하라.
+
+[Output Guidelines]
+- 교과서적인 조언을 배제하고, 임원 회의에서 즉각 논의할 수 있는 수준의 비즈니스 언어를 사용할 것.
+- AI가 확실하게 검증할 수 없는 데이터(할루시네이션 위험 요소)는 나에게 팩트 체크를 별도로 요청할 것.`;
+
+            document.getElementById('finalPromptText').innerText = finalPrompt;
         }
 
-        function copyAndAdvance() {
-            const text = document.getElementById('promptDisplay').innerText;
+        // Event Listeners for real-time prompt generation
+        document.getElementById('missionContext').addEventListener('input', generatePrompt);
+        document.getElementById('missionVariable').addEventListener('input', generatePrompt);
+
+        function copyActionPrompt() {
+            const variableInput = document.getElementById('missionVariable').value;
+            if(!variableInput.trim()) {
+                const proceed = confirm("리더님의 'Secret Variable(현장 변수)'가 입력되지 않았습니다.\n직관이나 제약조건을 입력하시면 에이전트의 답변 품질이 극대화됩니다.\n\n기본값으로 복사하고 계속하시겠습니까?");
+                if(!proceed) {
+                    document.getElementById('missionVariable').focus();
+                    return;
+                }
+            }
+
+            const text = document.getElementById('finalPromptText').innerText;
             const tempElem = document.createElement('textarea');
             tempElem.value = text;
             document.body.appendChild(tempElem);
             tempElem.select();
             document.execCommand('copy');
             document.body.removeChild(tempElem);
-
-            document.getElementById('step1-box').classList.remove('active');
-            document.getElementById('step2-box').classList.add('active');
-            document.getElementById('step2-num').classList.replace('bg-slate-200', 'bg-blue-700');
-            document.getElementById('step2-num').classList.add('text-white');
-
-            const btn = document.getElementById('copyBtn');
-            btn.innerHTML = `✓ 복사 완료! (잠시 후 제미나이가 열립니다)`;
-            btn.classList.replace('bg-blue-700', 'bg-emerald-700');
-
+            
+            const btn = document.getElementById('actionCopyBtn');
+            const iconHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>`;
+            
+            btn.innerHTML = `${iconHTML} <span>✓ 클립보드 복사 완료!</span>`;
+            btn.classList.replace('bg-blue-600', 'bg-emerald-600');
+            btn.classList.replace('hover:bg-blue-500', 'hover:bg-emerald-500');
+            
             setTimeout(() => {
-                document.getElementById('step3-box').classList.add('active');
-                document.getElementById('step3-num').classList.replace('bg-slate-200', 'bg-blue-700');
-                document.getElementById('step3-num').classList.add('text-white');
+                const originalIcon = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>`;
+                btn.innerHTML = `${originalIcon} <span>명령어 복사 후 제미나이 실행하기</span>`;
+                btn.classList.replace('bg-emerald-600', 'bg-blue-600');
+                btn.classList.replace('hover:bg-emerald-500', 'hover:bg-blue-500');
+                
+                // Open Gemini in a new tab
                 window.open('https://gemini.google.com/app', '_blank');
-            }, 1200);
+            }, 2500);
         }
 
-        window.onload = () => { setMission('제조'); };
+        // Initial Load
+        window.onload = () => {
+            changeDept('제조', null);
+        };
     </script>
 </body>
 </html>
